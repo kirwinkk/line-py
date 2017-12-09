@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from linepy import *
 
-#client = LineClient()
+client = LineClient()
 client = LineClient(authToken='EnVFVST0YE4ULQeViJs3.2XannlnZppIccyjdoNFtaW.soaW4CPYf1dRxNSRQHncCbJd6Olm+XUJJx5/xkpvCtc=')
 
 client.log("Auth Token : " + str(client.authToken))
