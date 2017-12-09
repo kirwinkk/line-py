@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 from linepy import *
+from datetime import datetime
+import time,datetime,random,sys,re,os,json,subprocess,codecs,threading,glob
+from gtts import gTTS
+from bs4 import BeautifulSoup
+import goslate
 
 client = LineClient()
 #client = LineClient(authToken='AUTHTOKEN')
@@ -15,11 +20,9 @@ poll = LinePoll(client)
 # Receive messages from LinePoll
 def RECEIVE_MESSAGE(op):
     '''
-        This is sample for implement BOT in LINE group
-        Invite your BOT to group, then BOT will auto accept your invitation
-        Command availabe :
-        > hi
-        > /author
+        戦神FreeBOT
+        [/help]→查看指令
+        [/author]→作者顯示
     '''
     msg = op.message
     
@@ -38,12 +41,10 @@ def RECEIVE_MESSAGE(op):
                 # Get sender contact
                 contact = client.getContact(sender)
                 # Command list
-                if text.lower() == 'hi':
-                    client.log('[%s] %s' % (contact.displayName, text))
-                    client.sendMessage(receiver, 'Hi too! How are you?')
+                if text.lower() == '/help':
+                    client.sendMessage(receiver, '戦神FreeBOT\n[/help]→查看指令\n[/author]→作者顯示')
                 elif text.lower() == '/author':
-                    client.log('[%s] %s' % (contact.displayName, text))
-                    client.sendMessage(receiver, 'My author is linepy')
+                    client.sendMessage(receiver, '作者:戦神\nhttps://line.me/R/ti/p/%40cld3625n')
     except Exception as e:
         client.log("[RECEIVE_MESSAGE] ERROR : " + str(e))
     
