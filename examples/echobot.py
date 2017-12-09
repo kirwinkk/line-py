@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
 from linepy import *
+from datetime import datetime
+import time,datetime,random,sys,re,os,json,subprocess,codecs,threading,glob
+from gtts import gTTS
+from bs4 import BeautifulSoup
+import goslate
+
 
 #client = LineClient()
-client = LineClient(authToken='EnVFVST0YE4ULQeViJs3.2XannlnZppIccyjdoNFtaW.soaW4CPYf1dRxNSRQHncCbJd6Olm+XUJJx5/xkpvCtc=')
+client = LineClient(authToken='EnynllnyCzEIH2LJo1q5.v3xvwYAziog2B7evwhhLPq.UiB0cXNPf+ngk8I+Aw4skD3+Rr1jTs6qsN1BYbdI+dY=')
 
 client.log("Auth Token : " + str(client.authToken))
 
